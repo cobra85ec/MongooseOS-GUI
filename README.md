@@ -1,7 +1,17 @@
 # MongooseOS-GUI
-A Web-Based GUI to configure WIFI, MQTT-Server etc...
 
-UNDER CONSTRUCTION: initial commit comming soon.
+>**A Web-Based GUI to configure:**
+
+>  * Device Name
+>  * Device Accesspoint SSID + Password
+  
+>  * Station Scan
+>  * Station Accesspoint Credentials (WPA/WPA2/WPA2 Enterprise)
+  
+>  * MQTT Server
+>  * User Credentials
+>  * Keep-Alive + Timeouts
+  
 
 
-![Screenshot](http://www.imakeyouintelligent.com/wp-content/uploads/2017/10/IMG_7905.jpg)
+
