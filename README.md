@@ -14,8 +14,7 @@
 ## Installtion
   1. Create a folder "gui" in you Applications Root-Directory and copy GUI-Files into.
   2. Enable Mongoose-OSs Webserver and set Document-Root to "/gui"
-  3. Now create an extra Filesystem on your ESP for the files
-  
+  3. Now create an extra Filesystem on your ESP for the files (in some cases it is necessary to run *mos flash --esp-erase-chip* before creating the file system)
 
   #### ESP8266
   ```bash
@@ -41,10 +40,10 @@
   mos config-set wifi.ap.enable=true
   ```
   
+  5. Upload GUI-Files to the new Created file system by running "uploadGUI.sh" in the /gui directory of your Application.
+  6. Connect to your ESPs AccessPoint an call *192.168.4.1* in the Browser
   
 ## Developement Roadmap:
  * Launch Mongoose-OS libary for Einable/Disable AccessPoint on Keypress
  * Captive Portal
  * SNTP Time Settings
-    
-    
