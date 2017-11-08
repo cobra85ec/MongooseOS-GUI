@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Switchbyte</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="gui_style.css">
+    <link rel="stylesheet" href="gui_gears.css">
+    <link rel="stylesheet" href="gui_jquery-ui.min.css">
+</head>
+<body>
+
+<header>
+    <img src="gui_i_config.png">
+    <h1>1IOT-TEMP001</h1>
+    <h2 id="SysGetInfoApp">loading..</h2>
+    <img src="gui_i_save.png" class="save" onclick="doConfigSave()">
+</header>
+<div style="height:40px;"></div>
+
+<!-- <div class="card fullwidth">
+    <div class="block">
+        <img src ="gui_i_node.png"/>
+        <img src ="gui_i_tick.png" class="tick"/>
+        <span>This Node</span>
+    </div>
+    <div class="block">
+        <img src ="gui_i_wifi_3.png"/>
+        <img src ="gui_i_tick.png" class="tick"/>
+        <span>Network</span>
+    </div>
+    <div class="block">
+        <img src ="gui_i_server.png"/>
+        <img src ="gui_i_tick.png" class="tick"/>
+        <span>Server</span>
+    </div>
+</div> -->
+
+<div class="card">
+     <div class="leftImg">
+         <img src ="gui_i_node.png" />
+     </div>
+     <table class="rightTable">
+        <tr>
+            <td style="min-width:65px">Uptime</td>
+            <td style="min-width:20px;text-align:center;">:</td>
+            <td style="width:100%;" id="SysGetInfoUptime"></td>
+        </tr>
+        <tr>
+            <td>WiFi SSID</td>
+            <td style="width:10px;text-align:center;">:</td>
+            <td id="SysGetInfoWifiSsid"></td>
+        </tr>
+        <tr>
+            <td>WiFi Status</td>
+            <td style="width:10px;text-align:center;">:</td>
+            <td id="SysGetInfoWifiStatus"></td>
+        </tr>
+        <tr>
+            <td>Wifi IP</td>
+            <td style="width:10px;text-align:center;">:</td>
+            <td id="SysGetInfoWifiStaIp"></td>
+        </tr>
+        <tr>
+            <td>WiFi MAC</td>
+            <td style="width:10px;text-align:center;">:</td>
+            <td id="SysGetInfoMac"></td>
+        </tr>
+     </table>
+    <hr/>
+     <table>
+        <tr>
+            <td>RAM</td>
+            <td style="min-width:10px;text-align:center;"></td>
+            <td style="width:100%;"><div id="SysGetInfoRam"></div></td>
+        </tr>
+        <tr>
+            <td>Storage</td>
+            <td></td>
+            <td><div id="SysGetInfoFs"></div></td>
+        </tr>
+     </table>
+</div>
+
+<div class="card">
+    <h2 id="nsh2">Node Settings</h2>
+    <div class="button" id="nsb">
+        <img src="gui_i_down.png">
+    </div>
+    <div class="button" id="nsbs" style="display:none;">
+        <img src="gui_i_up.png">
+    </div>
+    <div id="ns" style="display:none;">
+        <label>Node Name</label>
+        <input type="text" id="ConfigGetDeviceId"/>
+        <label>Node Password (min 8 Chars)</label>
+        <input type="password" id="ConfigGetDevicePassword"/>
+        <label>Node Password Reply</label>
+        <input type="password" id="ConfigGetDevicePassword2"/>
+    </div>
+</div>
+
+<div class="card">
+    <h2 id="nch2">Network Configuration</h2>
+    <div class="button second" onClick="doWifiScan()">
+        <img src="gui_i_refresh.png">
+    </div>
+    <div class="button" id="ncb">
+        <img src="gui_i_down.png">
+    </div>
+    <div class="button" id="ncbs" style="display:none;">
+        <img src="gui_i_up.png">
+    </div>
+    <div id="nc" style="display:none;">
+        <label><input type="checkbox" id="ConfigGetWifiStaEnabled" style="width:10px;height:10px;">WifI Enabled</label>
+        <hr/>
+        <label id="ConfigGetWifiStaSsidLabel">SSID</label>
+        <input type="text" id="ConfigGetWifiStaSsid"/>
+        <label id="ConfigGetWifiStaUserLabel">Username</label>
+        <input type="text" id="ConfigGetWifiStaUser"/>
+        <label id="ConfigGetWifiStaPassLabel">Password</label>
+        <input type="password" id="ConfigGetWifiStaPass"/>
+        <hr />
+        <label id="WifiScanNum"></label>
+        <div id="WifiScan"></div>
+    </div>
+</div>
+
+<div class="card">
+    <h2 id="sch2">Server Connection</h2>
+    <div class="button" id="scb">
+        <img src="gui_i_down.png">
+    </div>
+    <div class="button" id="scbs" style="display:none;">
+        <img src="gui_i_up.png">
+    </div>
+    <div id="sc" style="display:none;">
+        <label><input type="checkbox" id="ConfigGetMqttEnabled" style="width:10px;height:10px;">Mqtt Enabled</label>
+        <hr />
+        <label>Server URL</label>
+        <input type="text" id="ConfigGetMqttServer"/>
+        <label>User</label>
+        <input type="text" id="ConfigGetMqttUser"/>
+        <label>Password</label>
+        <input type="password" id="ConfigGetMqttPass"/>
+        <label>Client ID</label>
+        <input type="text" id="ConfigGetMqttClientId"/>
+        <label>Keep alive (Seconds)</label>
+        <input type="text" id="ConfigGetMqttKeepAlive"/>
+        <label>Reconnect-Timeout min (Seconds)</label>
+        <input type="text" id="ConfigGetMqttReconnectTimeoutMin"/>
+        <label>Reconnect-Timeout max (Seconds)</label>
+        <input type="text" id="ConfigGetMqttReconnectTimeoutMax"/>
+    </div>
+</div>
+
+<div class="shutter" id="sh">
+    <div class="box">
+        <h2 id="shh2">loading data, please wait</h2>
+        <div class="lds-css ng-scope">
+            <div class="lds-gears" style="100%;height:100%"><div><div></div><div></div><div></div><div></div><div></div><div></div></div><div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>
+        </div>
+    </div>
+</div>
+
+<div style="height:20px;"></div>
+<footer>MORE INFOS: github.com/calkoe/MongooseOS-GUI</footer>
+
+</body>
+
+<script src="gui_jquery.js"></script>
+<script src="gui_jquery-ui.min.js"></script>
+<script src="gui_sync.js"></script>
+<script>$("#nsb, #nsbs, #nsh2").click( function(){$("#nsb, #nsbs, #ns").slideToggle();});</script>
+<script>$("#ncb, #ncbs, #nch2").click( function(){$("#ncb, #ncbs, #nc").slideToggle();});</script>
+<script>$("#scb, #scbs, #sch2").click( function(){$("#scb, #scbs, #sc").slideToggle();});</script>
+</html>

@@ -1,0 +1,300 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+
+html{
+    background-color:#EEEEEE;
+    font-family:sans-serif;
+    color:#383838;
+    min-width:350px;
+}
+
+header {
+    width:100%;
+    height:40px;
+    background-color:#273E55;
+    position:fixed;
+    top:0;
+    left:0;
+}
+
+    header img{
+        float:left;
+        height:20px;
+        width:20px;
+        padding:10px;
+    }
+
+    header .save{
+        float:right;
+        margin-top:-40px;
+        border-left:1px #1c2e3f solid;
+    }
+
+    header .save:active{
+        box-shadow:0px 0px 3px 0px #000 inset;
+    }
+
+    header h1{
+        padding-top:6px;
+        line-height:15px;
+        font-size:15px;
+        color:#f4f4f4;
+        font-weight:100;
+    }
+
+    header h2{
+        padding-bottom:4px;
+        line-height:15px;
+        font-size:9px;
+        color:#f4f4f4;
+        font-weight:100;
+    }
+
+.block{
+    width:33.3333333%;
+    float:left;
+    text-align:center;
+    margin-bottom:-4px;
+    padding-top:5px;
+}
+
+    .block img{ /* Bacground: #EEEEEE, GREEN: #00C59A (#008C39), BLUEGRAY:#273E55  */
+        height:40px;
+        width:40px;
+        display: block;
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .block .tick{
+        height:20px;
+        width:20px;
+        position:relative;
+        left:15px;
+        top:-15px;
+        border:2px #ededed solid;
+        background-color:#ededed;
+        border-radius:20px;
+    }
+
+    .block span{
+        font-size:11px;
+        position:relative;
+        top:-15px;
+    }
+
+
+
+.card{
+    width:calc(94% - 42px);
+    margin:10px;
+    margin-left:3%;
+    margin-right:3%;
+    padding:10px;
+    padding-left:20px;
+    padding-right:20px;
+    background-color:white;
+    border:1px #e5e3e3 solid;
+}
+
+.fullwidth{
+    width:calc(100% - 42px);
+    margin:0%;
+    min-height:70px;
+}
+
+    .card table{
+        font-size:11px;
+        line-height:14px;
+        color:#273E55;
+    }
+
+    .card .leftImg
+    {
+        float:left;
+        width:calc(30% + 10px);
+        height:82px;
+        margin-left:-10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .card .leftImg img{
+        width:50px;
+    }
+
+    .card .rightTable
+    {
+        float:right;
+        width:70%;
+        padding-bottom:10px;
+    }
+
+    .card .button{
+        float:right;
+        height:30px;
+        width:30px;
+        margin-right:-15px;
+        margin-top:-30px;
+    }
+
+    .card .button:active{
+        box-shadow:0px 0px 3px 0px #000 inset;
+    }
+
+    .card .button img{
+        height:14px;
+        width:14px;
+        padding:8px;
+    }
+
+    .card .second{
+        margin-right:15px;
+    }
+
+    .card h2{
+        line-height:30px;
+        font-size:9px;
+        text-transform: uppercase;
+        color:#696969;
+        margin-left:-5px;
+        letter-spacing: 1px;
+    }
+
+    .card label{
+        font-size:10px;
+        line-height:15px;
+    }
+
+    .card input{
+        width:calc(100% - 2px);
+        box-shadow:none;
+        border:none;
+        border-bottom:1px #00C59A solid;
+        border-radius:0;
+        font-size:14px;
+        letter-spacing:1px;
+        line-height:20px;
+        margin-bottom:5px;
+    }
+
+    .card hr{
+        height:1px;
+        width:100%;
+        border:none;
+        border-top:1px #e5e3e3 solid;
+        margin-top:15px;
+        margin-bottom:10px;
+    }
+
+
+    .card .ui-progressbar{
+        width:100%;
+        height:10px;
+        border:1px #e5e3e3 solid;
+        float:right;
+    }
+
+    .card .ui-progressbar .ui-progressbar-value{
+        background-color:#00C59A;
+    }
+
+    .card .accespoint{
+        width:calc(100% -10px);
+        height:30px;
+        margin-top:10px;
+        margin-left:10px;
+        border-bottom:1px #00C59A solid;
+    }
+
+    .card .accespoint:active{
+        box-shadow:0px 0px 3px 0px #000 inset;
+    }
+
+    .card .accespoint .status{
+        float:left;
+        height:22px;
+        width:22px;
+        padding:4px;
+        padding-right:10px;
+    }
+
+    .card .accespoint h5{
+        padding-top:5px;
+        line-height:12px;
+        font-size:12px;
+    }
+
+    .card .accespoint h6{
+        padding-top:1px;
+        line-height:8px;
+        font-size:8px;
+        font-weight:100
+    }
+
+    .card .accespoint .arrow{
+        float:right;
+        height:10px;
+        width:10px;
+        padding:10px;
+        margin-top:-26px;
+    }
+
+.shutter{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background-color: rgba(55, 55, 55, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    .shutter .box{
+        width:calc(94% - 2px);
+        margin-left:3%;
+        margin-right:3%;
+        background-color:white;
+        border:1px #e5e3e3 solid;
+    }
+
+    .shutter .box h2{
+        width:calc(94% - 70px);
+        padding-left:20px;
+        line-height:52px;
+        font-size:9px;
+        text-transform: uppercase;
+        color:#696969;
+        letter-spacing: 1px;
+        float:left;
+    }
+
+    .shutter .box .lds-css{
+        width:52px;
+        height:52px;
+        float:right;
+    }
+
+footer{
+    width:100%;
+    position:fixed;
+    bottom:0;
+    left:0;
+    line-height:15px;
+    font-size:6px;
+    color:#696969;
+    padding-left:20px;
+    padding-right:20px;
+    background-color:white;
+    border-top:1px #e5e3e3 solid;
+}
+
+
+
+
