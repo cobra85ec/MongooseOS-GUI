@@ -1,4 +1,5 @@
 # MongooseOS-GUI
+<img width="300px" align="right" src="http://www.imakeyouintelligent.com/wp-content/uploads/2017/10/IMG_7905.jpg">
 
 ## A Web-Based GUI to configure:
   * Device Name
