@@ -3,10 +3,8 @@
 ## A Web-Based GUI to configure:
   * Device Name
   * Device Accesspoint SSID + Password
-  
   * Station Scan
   * Station Accesspoint Credentials (WPA/WPA2/WPA2 Enterprise)
-  
   * MQTT Server
   * User Credentials
   * Keep-Alive + Timeouts
@@ -44,9 +42,9 @@
   ```
   
   
-  ## Developement Roadmap:
-    * Launch Mongoose-OS libary for Einable/Disable AccessPoint on Keypress
-    * Captive Portal
-    * SNTP Time Settings
+## Developement Roadmap:
+ * Launch Mongoose-OS libary for Einable/Disable AccessPoint on Keypress
+ * Captive Portal
+ * SNTP Time Settings
     
     
