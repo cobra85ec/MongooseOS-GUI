@@ -1,7 +1,7 @@
 #!/bin/bash
 
-for i in $(ls gui); do
-    if [ "$i" != 'LICENSE' ] && [ "$i" != 'README.md' ] && [ "$i" != '.git' ] && [ "$i" != '.gitignored' ]; then
+for i in $(ls); do
+    if [ "$i" != 'LICENSE' ] && [ "$i" != 'README.md' ] && [ "$i" != '.git' ] && [ "$i" != '.gitignored' ] && [ "$i" != 'uploadGUI.sh' ]; then
         echo "$i"
         mos put ./$i gui/$i
     fi
