@@ -27,6 +27,7 @@
   4. Now create an extra filesystem on your ESP for the files
 
   #### ESP8266
+  Run in Shell:
   ```bash
   #Create Filesystem
   mos call FS.Mkfs '{"dev_type": "sysflash", "fs_type": "SPIFFS", "fs_opts": "{\"addr\": 3145728, \"size\": 262144"}'
@@ -36,11 +37,12 @@
   mos config-set sys.mount.path=/gui sys.mount.dev_type=sysflash sys.mount.fs_type=SPIFFS 'sys.mount.fs_opts={"addr": 3145728, "size": 262144}'
   ```
   #### ESP32
-  Add this in you Applications mos.yml
+  Add this in you Applications mos.yml:
   ```yamal
     build_vars:                                           
         ESP_IDF_EXTRA_PARTITION: gui,data,spiffs,,256K
   ```
+  Run in Shell:
   ```bash
   #Create Filesystem
   mos call FS.Mkfs '{"dev_type": "esp32part", "dev_opts": "{\"label\": \"gui\"}", "fs_type": "SPIFFS"}'
