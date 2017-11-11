@@ -37,7 +37,7 @@
   mos config-set sys.mount.path=/gui sys.mount.dev_type=sysflash sys.mount.fs_type=SPIFFS 'sys.mount.fs_opts={"addr": 3145728, "size": 262144}'
   ```
   #### ESP32
-  Add this in you Applications mos.yml:
+  ###### Add this in your Applications mos.yml:
   ```yamal
     build_vars:                                           
         ESP_IDF_EXTRA_PARTITION: gui,data,spiffs,,256K
