@@ -27,7 +27,7 @@
   4. Now create an extra filesystem on your ESP for the files
 
   #### ESP8266
-  Run in Shell:
+  ###### Run in Shell:
   ```bash
   #Create Filesystem
   mos call FS.Mkfs '{"dev_type": "sysflash", "fs_type": "SPIFFS", "fs_opts": "{\"addr\": 3145728, \"size\": 262144"}'
@@ -42,7 +42,7 @@
     build_vars:                                           
         ESP_IDF_EXTRA_PARTITION: gui,data,spiffs,,256K
   ```
-  Run in Shell:
+  ###### Run in Shell:
   ```bash
   #Create Filesystem
   mos call FS.Mkfs '{"dev_type": "esp32part", "dev_opts": "{\"label\": \"gui\"}", "fs_type": "SPIFFS"}'
